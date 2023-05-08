@@ -1671,6 +1671,9 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    top: 20px;
+    left: 0px;
+    width: 1420px;
 }
 .col-xs-1,
 .col-xs-2,

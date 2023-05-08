@@ -22,6 +22,7 @@
                                 <div class="col-md-4 col-md-offset-1">
                                     <div class="form-group">
                                         <asp:Label Text="First Name" runat="server" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_firstName" ErrorMessage="First Name is required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         <asp:TextBox ID="txt_firstName" runat="server" Enabled ="true" CssClass="form-control input-sm" placeholder="First Name"/>
                                     </div>
                                 </div>
@@ -39,6 +40,7 @@
                                 <div class="col-md-4 col-md-offset-1">
                                     <div class="form-group">
                                         <asp:Label Text="Subject" runat="server" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_subject" ErrorMessage="Subject is required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         <asp:TextBox ID="txt_subject" runat="server" Enabled ="true" CssClass="form-control input-sm" placeholder="Subject"/>
                                     </div>
                                 </div>
@@ -46,6 +48,7 @@
                                 <div class="col-md-4 col-md-offset-1">
                                     <div class="form-group">
                                         <asp:Label Text="Email" runat="server" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txt_email" ErrorMessage="Email is required" ForeColor="Red"></asp:RequiredFieldValidator>
                                         <asp:TextBox ID="txt_email" runat="server" Enabled ="true" CssClass="form-control input-sm" placeholder="Email"/>
                                     </div>
                                 </div>
@@ -55,7 +58,8 @@
                                 <div class="col-md-4 col-md-offset-1">
                                     <div class="form-group">
                                         <asp:Label Text="Message" runat="server" />
-                                        <asp:TextBox ID="txt_message" runat="server" Enabled ="true" TextMode="MultiLine" Rows="4" placeholder="Email" />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txt_message" ErrorMessage="Message is required" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:TextBox ID="txt_message" runat="server" Enabled ="true" TextMode="MultiLine" Rows="4" placeholder="Email" Height="71px" Width="1386px" />
 
                                     </div>
                                 </div>
