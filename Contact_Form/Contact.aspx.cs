@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -23,29 +24,30 @@ namespace Contact_Form
             {
                 string from = "mark.efendi444@gmail.com";
                 string to = "mark.efendi444@gmail.com";
-                const string password = "pass";
+                const string password = "lwayepdigmzpcues";
 
                 string mailSubject = txt_subject.Text;
 
                 //making a stringBuilder, because when we need to add text sb is more powerful
                 StringBuilder fullMessage = new StringBuilder();
-                fullMessage.AppendLine($"From {txt_firstName} {txt_lastName}");
-                fullMessage.AppendLine($"Email {txt_email}");
-                fullMessage.AppendLine($"Subject {txt_subject}");
-                fullMessage.AppendLine($"Messgae {txt_message}");
+                fullMessage.AppendLine($"From {txt_firstName.Text} {txt_lastName.Text}");
+                fullMessage.AppendLine($"Email {txt_email.Text}");
+                fullMessage.AppendLine($"Subject {txt_subject.Text}");
+                fullMessage.AppendLine($"Messgae {txt_message.Text}");
 
                 SmtpClient smtp = new SmtpClient();
                 smtp.Host = "smtp.gmail.com";
                 smtp.Port = 587;
                 smtp.EnableSsl = true;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new NetworkCredential(from, password);
                 smtp.Timeout = 20000;
 
                 smtp.Send(from, to, mailSubject, fullMessage.ToString());
 
-                //thank you for your email
-
+                //message if ypu successful send email
+                confirm.Text = "Thank you for your email!";
 
                 //make all txts empty
                 txt_firstName.Text = string.Empty;
@@ -56,7 +58,8 @@ namespace Contact_Form
             }
             catch (Exception a)
             {
-                Console.WriteLine(a.Message);
+                confirm.Text = a.Message;
+                confirm.ForeColor = Color.Red;
             }
         }
     }

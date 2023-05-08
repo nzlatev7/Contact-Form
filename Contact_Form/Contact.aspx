@@ -10,6 +10,10 @@
                         <header class="panel-heading">
                             <div class="col-md-4 col-md-offset-4">
                                 <h1>Contact Form</h1>
+                                <h3>
+                                    <asp:Label ID="confirm" Text="" runat="server" />
+
+                                </h3>
                             </div>
                         </header>
 
