@@ -24,16 +24,18 @@ namespace Contact_Form
             {
                 string from = "mark.efendi444@gmail.com";
                 string to = "mark.efendi444@gmail.com";
-                const string password = "lwayepdigmzpcues";
+
+                //if it does not work, you need to add App Password - https://myaccount.google.com/apppasswords
+                const string password = "YourPassword";
 
                 string mailSubject = txt_subject.Text;
 
                 //making a stringBuilder, because when we need to add text sb is more powerful
                 StringBuilder fullMessage = new StringBuilder();
-                fullMessage.AppendLine($"From {txt_firstName.Text} {txt_lastName.Text}");
-                fullMessage.AppendLine($"Email {txt_email.Text}");
-                fullMessage.AppendLine($"Subject {txt_subject.Text}");
-                fullMessage.AppendLine($"Messgae {txt_message.Text}");
+                fullMessage.AppendLine($"From: {txt_firstName.Text} {txt_lastName.Text}");
+                fullMessage.AppendLine($"Email: {txt_email.Text}");
+                fullMessage.AppendLine($"Subject: {txt_subject.Text}");
+                fullMessage.AppendLine($"Message: {txt_message.Text}");
 
                 SmtpClient smtp = new SmtpClient();
                 smtp.Host = "smtp.gmail.com";
