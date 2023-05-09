@@ -12,7 +12,6 @@
                                 <h1>Contact Form</h1>
                                 <h3>
                                     <asp:Label ID="confirm" Text="" runat="server" />
-
                                 </h3>
                             </div>
                         </header>
